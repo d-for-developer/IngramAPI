@@ -3,7 +3,6 @@ from django.utils.text import gettext_lazy as _
 
 
 # Create your models here.
-
 class PostSaleModel(models.Model):
     customer_name = models.CharField(verbose_name=_("Customer Name"), max_length=60, null=True, blank=False)
     customer_email = models.CharField(verbose_name=_("Customer Email"), max_length=60, null=True, blank=False)

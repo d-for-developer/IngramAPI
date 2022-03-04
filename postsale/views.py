@@ -1,4 +1,19 @@
-from django.shortcuts import render
+from rest_framework.generics import ListAPIView, CreateAPIView
+from api_token.permissions import HasValidApiToken
+from .models import PostSaleModel
+from .serializers import PostSaleSerializer
 
-# Create your views here.
+
+class PostSaleListView(ListAPIView):
+    """This endpoint allows for view of a post sale data"""
+    queryset = PostSaleModel.objects.all()
+    serializer_class = PostSaleSerializer
+    permission_classes = (HasValidApiToken,)
+
+
+# class PostSaleCreateView(CreateAPIView):
+#     """This endpoint allows for create of a post sale data"""
+#     queryset = PostSaleModel.objects.all()
+#     serializer_class = PostSaleSerializer
+#     permission_classes = (HasValidApiToken,)
 
