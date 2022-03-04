@@ -9,7 +9,8 @@ CUSTOM_APPS = [
     'import_export',
     'drf_yasg',
     'api_token',
-    'product'
+    'product',
+    'postsale'
 ]
 
 AUTH_USER_MODEL = 'drf_user.User'
