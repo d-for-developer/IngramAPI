@@ -16,11 +16,6 @@ class PostSaleCreateView(CreateAPIView):
     serializer_class = PostSaleSerializer
 
     def post(self, request, *args, **kwargs):
-        if (customer_name := request.data.get("customer_name")) and (
-                start_date := request.data.get("start_date")
-        ):
-            request.data["customer_name"] = customer_name
-            request.data["start_date"] = start_date
-            return self.create(request, *args, **kwargs)
         return self.create(request, *args, **kwargs)
+
     permission_classes = (HasValidApiToken,)
