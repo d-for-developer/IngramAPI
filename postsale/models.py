@@ -26,8 +26,8 @@ class PostSaleModel(models.Model):
     partner_bu_name = models.CharField(verbose_name=_("Partner bu name"), max_length=60, null=False, blank=False)
     MembershipId = models.CharField(verbose_name=_("MembershipId"), max_length=60, null=False, blank=False)
     primary_customerID = models.CharField(verbose_name=_("Primary Customer ID"), max_length=60, null=False, blank=False)
-    start_date = models.DateField(verbose_name=_("Start date"), max_length=60, null=False, blank=False)
-    end_date = models.DateField(verbose_name=_("End date"), max_length=60, null=False, blank=False)
+    start_date = models.DateField(verbose_name=_("Start date"))
+    end_date = models.DateField(verbose_name=_("End date"))
 
     def __str__(self):
         return self.customer_name
