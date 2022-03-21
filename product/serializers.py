@@ -1,9 +1,10 @@
+from django_filters.rest_framework import FilterSet
 from rest_framework import serializers
 
 
 class SerialValidationSerializer(serializers.Serializer):
-    part_no = serializers.CharField(required=True,)
-    serial_no = serializers.CharField(required=True,)
+    part_no = serializers.CharField(required=True, )
+    serial_no = serializers.CharField(required=True, )
 
 
 class ProductSerializer(serializers.ModelSerializer):

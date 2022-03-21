@@ -13,6 +13,15 @@ class ListProductView(ListAPIView):
     permission_classes = (HasValidApiToken,)
 
 
+class DetailProductView(ListAPIView):
+    from .models import Product
+    from .serializers import ProductSerializer
+
+    queryset = Product.objects.filter(serial_no=id)
+    serializer_class = ProductSerializer
+    permission_classes = (HasValidApiToken,)
+
+
 class ValidateSerialNoView(GenericAPIView):
     """
     Handles the post request and checks if the serial number provided is valid
