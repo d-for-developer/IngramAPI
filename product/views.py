@@ -1,3 +1,4 @@
+import string
 from rest_framework import status
 from rest_framework.generics import GenericAPIView, ListAPIView
 
@@ -13,11 +14,14 @@ class ListProductView(ListAPIView):
     permission_classes = (HasValidApiToken,)
 
 
-class DetailProductView(ListAPIView):
-    from .models import Product
+class ProductDetailView(ListAPIView):
     from .serializers import ProductSerializer
 
-    queryset = Product.objects.filter(serial_no=id)
+    def get_queryset(self):
+        from .models import Product
+        sno = self.request.GET['serial_no']
+        queryset = Product.objects.filter(serial_no=sno)
+        return queryset
     serializer_class = ProductSerializer
     permission_classes = (HasValidApiToken,)
 

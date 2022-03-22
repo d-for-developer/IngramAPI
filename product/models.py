@@ -20,4 +20,4 @@ class Product(models.Model):
     class Meta:
         verbose_name = _("Product")
         verbose_name_plural = _("Products")
-        unique_together = ('serial_no', 'part_no')
+        # unique_together = ('serial_no', 'part_no')

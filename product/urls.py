@@ -9,7 +9,7 @@ urlpatterns = [
     # ex: api/product/<str:token>/
     path('<str:token>/', views.ListProductView.as_view(), name='List Product'),
     # ex: api/product/<str:token>/detail/
-    path('<str:token>/detail/<int:id>', views.DetailProductView.as_view(), name='Detail Product'),
+    path('<str:token>/detail/', views.ProductDetailView.as_view(), name='Product Detail'),
     # ex: api/product/<str:token>/validate/
     path('<str:token>/validate/', views.ValidateSerialNoView.as_view(), name='Validate Product'),
     # ex: api/product/<str:token>/block/
