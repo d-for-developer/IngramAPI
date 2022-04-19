@@ -7,7 +7,7 @@ class PostSaleModel(models.Model):
     customer_name = models.CharField(verbose_name=_("Customer Name"), max_length=60, null=True, blank=False)
     customer_email = models.CharField(verbose_name=_("Customer Email"), max_length=60, null=True, blank=False)
     customer_mobile_no = models.CharField(verbose_name=_("Mobile Number"), max_length=12, null=True, blank=False)
-    product_name = models.CharField(verbose_name=_("Product Name / Code"), max_length=60, null=True, blank=False)
+    product_name = models.CharField(verbose_name=_("Product Name / Code"), max_length=500, null=True, blank=False)
     assetMake = models.CharField(verbose_name=_("Asset Make"), max_length=60, null=False, blank=False)
     assetModel = models.CharField(verbose_name=_("Asset Model"), max_length=60, null=False, blank=False)
     serialNo = models.CharField(verbose_name=_("Serial No"), max_length=60, null=False, blank=False)
