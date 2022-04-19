@@ -14,4 +14,7 @@ urlpatterns = [
     path('<str:token>/validate/', views.ValidateSerialNoView.as_view(), name='Validate Product'),
     # ex: api/product/<str:token>/block/
     path('<str:token>/block/', views.BlockProductView.as_view(), name='Block Product'),
+    # ex: api/product/<str:token>/unblock/
+    path('<str:token>/unblock/', views.UnblockProductView.as_view(), name='Unblock Product'),
+
 ]
